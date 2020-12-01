@@ -1,10 +1,9 @@
 #
 # Build: docker build -t hocr-tools-app .
-# Start: docker run -it --rm -v ${PWD}:/usr/src/app hocr-tools-app bash
-# Test: ./test/tsht
+# Start: docker run -it --rm hocr-tools-app
 #
 
-FROM python:3
+FROM python:3.8
 ENV PYTHONIOENCODING utf8
 
 RUN apt-get update && apt-get install -y --no-install-recommends pdfgrep \
@@ -20,5 +19,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /usr/src/app
 
 RUN python setup.py install
+RUN ./test/tsht
 
-CMD ./test/tsht
+CMD ["bash"]
