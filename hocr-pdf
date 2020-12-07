@@ -30,6 +30,7 @@ import zlib
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen.canvas import Canvas
+from tkinter import Tcl
 
 from lxml import etree, html
 from PIL import Image
@@ -51,6 +52,7 @@ class StdoutWrapper:
 def export_pdf(playground, default_dpi, savefile=False):
     """Create a searchable PDF from a pile of HOCR + JPEG"""
     images = sorted(glob.glob(os.path.join(playground, '*.jpg')))
+    images = Tcl().call('lsort', '-dict', images)
     if len(images) == 0:
         print("WARNING: No JPG images found in the folder", playground,
               "\nScript cannot proceed without them and will terminate now.\n")
