@@ -6,7 +6,8 @@
 FROM python:3.8
 ENV PYTHONIOENCODING utf8
 
-RUN apt-get update && apt-get install -y --no-install-recommends pdfgrep \
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends pdfgrep \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
