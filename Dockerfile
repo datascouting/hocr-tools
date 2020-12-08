@@ -5,7 +5,6 @@
 
 FROM python:3.6-buster
 MAINTAINER "Iordanis Kostelidis <ikostelidis@datascouting.com>"
-
 ENV PYTHONIOENCODING utf8
 
 RUN apt-get update \
