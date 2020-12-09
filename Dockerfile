@@ -6,6 +6,7 @@
 FROM ubuntu:20.04 as production
 MAINTAINER "Iordanis Kostelidis <ikostelidis@datascouting.com>"
 
+ENV DEBIAN_FRONTEND="noninteractive"
 ENV PYTHONIOENCODING utf8
 
 RUN apt-get update \
