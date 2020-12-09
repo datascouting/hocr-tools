@@ -11,8 +11,9 @@ pythonStagingFlow(
         new DockerPushDefinition([
             file      : "./Dockerfile",
             context   : "./",
-            project   : "scratches",
+            project   : "ecarle-development",
             args      : [
+                "INSTALL_ARGS=--ignore-pipfile"
             ]
         ])
     ]
