@@ -28,6 +28,6 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 
 COPY . /usr/src/app
 
-RUN python setup.py install
+RUN python3 setup.py install
 
 CMD ["bash"]
