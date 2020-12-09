@@ -3,7 +3,9 @@
 # Start: docker run -it --rm hocr-tools-app
 #
 
-FROM python:3.8
+FROM python:3.6-buster
+MAINTAINER "Iordanis Kostelidis <ikostelidis@datascouting.com>"
+
 ENV PYTHONIOENCODING utf8
 
 RUN apt-get update \
@@ -11,7 +13,6 @@ RUN apt-get update \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 COPY requirements.txt /usr/src/app/

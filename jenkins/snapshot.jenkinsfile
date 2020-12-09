@@ -1,0 +1,19 @@
+import com.datascouting.jenkinsutils.DockerPushDefinition
+
+pythonStagingFlow(
+    baseName: "hocr-tools",
+    properties: [
+        disableConcurrentBuilds(),
+        discardBuilds(days: 5, num: 7)
+    ],
+    node: "master",
+    docker: [
+        new DockerPushDefinition([
+            file      : "./Dockerfile",
+            context   : "./",
+            project   : "scratches",
+            args      : [
+            ]
+        ])
+    ]
+)
