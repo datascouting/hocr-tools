@@ -1,17 +1,23 @@
 #
-# Build: docker build -t hocr-tools-app .
-# Start: docker run -it --rm hocr-tools-app
+# Build: docker build -t hocr-tools .
+# Start: docker run -it --rm hocr-tools
 #
 
-FROM python:3.6-buster
+FROM ubuntu:20.04 as production
 MAINTAINER "Iordanis Kostelidis <ikostelidis@datascouting.com>"
 
 ENV PYTHONIOENCODING utf8
 
 RUN apt-get update \
-  && apt-get install -y --no-install-recommends pdfgrep \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*
+ && apt-get install -y \
+    apt-utils \
+ && apt-get install -y \
+    pdfgrep \
+    python3 \
+    python3-tk \
+    python3-dev \
+    python3-pip \
+ && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app
 
