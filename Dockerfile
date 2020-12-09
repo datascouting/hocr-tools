@@ -14,6 +14,7 @@ RUN apt-get update \
     apt-utils \
  && apt-get install -y \
     pdfgrep \
+    libjpeg8-dev \
     python3 \
     python3-tk \
     python3-dev \
