@@ -20,11 +20,7 @@ RUN apt-get update \
     python3.6 \
     python3.6-tk \
     python3.6-dev \
- && rm -rf /var/lib/apt/lists/*
-
-RUN apt-get update \
- && apt-get remove -y python3.8 \
- && apt-get install -y python3-pip \
+    python3-pip \
  && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update \
