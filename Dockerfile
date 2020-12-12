@@ -3,7 +3,7 @@
 # Start: docker run -it --rm hocr-tools
 #
 
-FROM python:3.6.12-buster
+FROM python:3.6.12-stretch
 MAINTAINER "Iordanis Kostelidis <ikostelidis@datascouting.com>"
 
 ENV DEBIAN_FRONTEND="noninteractive"
