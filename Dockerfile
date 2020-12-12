@@ -3,7 +3,7 @@
 # Start: docker run -it --rm hocr-tools
 #
 
-FROM ubuntu:20.04 as production
+FROM python:3.6.12-buster
 MAINTAINER "Iordanis Kostelidis <ikostelidis@datascouting.com>"
 
 ENV DEBIAN_FRONTEND="noninteractive"
@@ -13,20 +13,7 @@ RUN apt-get update \
  && apt-get install -y \
     apt-utils \
  && apt-get install -y \
-    software-properties-common \
- && add-apt-repository -y ppa:deadsnakes/ppa \
- && apt-get update \
- && apt-get install -y \
-    python3.6 \
-    python3.6-tk \
-    python3.6-dev \
-    python3-pip \
- && rm -rf /var/lib/apt/lists/*
-
-RUN apt-get update \
- && apt-get install -y \
     pdfgrep \
-    libjpeg8-dev \
     git \
  && rm -rf /var/lib/apt/lists/*
 
